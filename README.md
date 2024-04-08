@@ -135,3 +135,45 @@ Here's the breakdown of the most demanded skills for data analysts in 2023
 | Power BI	|2609		|
 
 Table of the demand for the top 5 skills in data analyst job postings
+
+**4. Skills Based on Salary**
+
+Exploring the average salaries associated with different skills revealed which skills are the highest paying.
+
+```
+SELECT 
+    skills,
+    ROUND(AVG(salary_year_avg), 0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Analyst'
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = True 
+GROUP BY
+    skills
+ORDER BY
+    avg_salary DESC
+LIMIT 25;
+```
+
+Here's a breakdown of the results for top paying skills for Data Analysts:
+
+- High Demand for Big Data & ML Skills: Top salaries are commanded by analysts skilled in big data technologies (PySpark, Couchbase), machine learning tools (DataRobot, Jupyter), and - Python libraries (Pandas, NumPy), reflecting the industry's high valuation of data processing and predictive modeling capabilities.
+- Software Development & Deployment Proficiency: Knowledge in development and deployment tools (GitLab, Kubernetes, Airflow) indicates a lucrative crossover between data analysis and engineering, with a premium on skills that facilitate automation and efficient data pipeline management.
+- Cloud Computing Expertise: Familiarity with cloud and data engineering tools (Elasticsearch, Databricks, GCP) underscores the growing importance of cloud-based analytics environments, suggesting that cloud proficiency significantly boosts earning potential in data analytics.
+  
+|Skills		|Average Salary ($)
+|pyspark	|208,172
+|bitbucket	|189,155
+|couchbase	|160,515
+|watson		|160,515
+|datarobot	|155,486
+|gitlab		|154,500
+|swift		|153,750
+|jupyter	|152,777
+|pandas		|151,821
+|elasticsearch	|145,000
+
+Table of the average salary for the top 10 paying skills for data analysts
