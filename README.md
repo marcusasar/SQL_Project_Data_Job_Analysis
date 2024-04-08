@@ -36,7 +36,7 @@ Each query for this project aimed at investigating specific aspects of the data 
 To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
 
 ```diff
--SELECT	
+SELECT	
 	job_id,
 	job_title,
 	job_location,
