@@ -31,10 +31,11 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 
 Each query for this project aimed at investigating specific aspects of the data analyst job market. Here’s how I approached each question:
 
-1. Top Paying Data Analyst Jobs
+**1. Top Paying Data Analyst Jobs**
 
 To identify the highest-paying roles, I filtered data analyst positions by average yearly salary and location, focusing on remote jobs. This query highlights the high paying opportunities in the field.
 
+```
 SELECT	
 	job_id,
 	job_title,
@@ -53,7 +54,7 @@ WHERE
 ORDER BY
     salary_year_avg DESC
 LIMIT 10;
-
+```
 Here's the breakdown of the top data analyst jobs in 2023:
 
 - Wide Salary Range: Top 10 paying data analyst roles span from $184,000 to $650,000, indicating significant salary potential in the field.
