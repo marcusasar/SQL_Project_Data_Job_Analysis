@@ -18,7 +18,7 @@ FROM
     job_postings_fact
 LEFT JOIN 
     company_dim
-USING(company_id)
+USING (company_id)
 WHERE
     job_title_short = 'Data Analyst' AND
     job_location = 'Anywhere' AND
